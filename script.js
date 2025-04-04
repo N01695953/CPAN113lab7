@@ -9,3 +9,14 @@ mouseButton.addEventListener('mouseover', () => {
 mouseButton.addEventListener('mouseout', () => {
     mouseMessage.textContent = 'Mouse has left the button!';
 });
+
+//Keyboard Events
+let keyboardInput = document.getElementById('keyboardInput');
+let keyMessage = document.getElementById('keyMessage');
+
+keyboardInput.addEventListener('keyup', function(event) {
+    console.log(`Key released: ${event.key}`);
+    if(event.key === 'Enter') {
+        console.log('Enter key  released.');
+    }
+});
