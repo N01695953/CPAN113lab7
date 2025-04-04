@@ -15,30 +15,36 @@ let keyboardInput = document.getElementById('keyboardInput');
 let keyMessage = document.getElementById('keyMessage');
 
 keyboardInput.addEventListener('keyup', function(event) {
-    console.log(`Key released: ${event.key}`);
-    if(event.key === 'Enter') {
-        console.log('Enter key  released.');
-    }
+    keyMessage.textContent = `Last key pressed: ${event.key}`;
 });
 
 //Form events 
-let form = document.getElementById('myForm');
-let username = document.getElementById('username');
-let status = document.getElementById('status');
+let form = document.getElementById('Form');
+let formMessage = document.getElementById('formMessage');
 
-// Handle form submission
-form.addEventListener('submit', function(event) {
-    console.log('Form submitted');
-    event.preventDefault(); // Prevent the actual form submission
-    alert(`Username: ${username.value}, Status: ${status.value}`);
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    formMessage.textContent = 'Form submitted successfully!';
 });
 
-// Handle changes in the select menu
-status.addEventListener('change', function() {
-    console.log('Selection changed to:', this.value);
+//Focus and Blur events
+let focusInput = document.getElementById('focusInput');
+let focusMessage = document.getElementById('focusMessage');
+
+focusInput.addEventListener('focus', () => {
+    focusMessage.textContent = 'Input field is focused!';
 });
 
-// Handle real-time input changes in the username field
-username.addEventListener('input', function() {
-    console.log('Input changed: ', this.value);
+focusInput.addEventListener('blur', () => {
+    focusMessage.textContent = 'Input field lost focus!';
 });
+
+//Event Delegation
+let buttonContainer = document.getElementById('buttonContainer');
+let delegationMessage = document.getElementById('delegationMessage');
+
+buttonContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delegatedButton')) {
+        delegationMessage.textContent = `You clicked: ${event.target.textContent}`;
+    }
+})
