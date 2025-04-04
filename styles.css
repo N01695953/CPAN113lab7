@@ -7,15 +7,16 @@ body {
 section {
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 0.5px solid #ccc;
     border-radius: 5px;
     text-align: center;
+    background-color: blue;
+    align-items: center;
 }
 
 button {
     padding: 10px 15px;
     margin-top: 10px;
-    align-items: center;
 }
 
 input {
